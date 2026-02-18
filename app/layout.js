@@ -3,6 +3,7 @@ import "./globals.css";
 import Header from "@/component/Header";
 import TopLoader from "@/component/TopLoader";
 import { PopupProvider } from "@/context/PopupContext";
+import Footer from "../component/Footer";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -28,6 +29,7 @@ export default function RootLayout({ children }) {
         <PopupProvider>
         <Header/>
         {children}
+        <Footer/>
         </PopupProvider>
       </body>
     </html>
