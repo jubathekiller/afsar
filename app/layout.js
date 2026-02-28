@@ -4,6 +4,7 @@ import Header from "@/component/Header";
 import TopLoader from "@/component/TopLoader";
 import { PopupProvider } from "@/context/PopupContext";
 import Footer from "../component/Footer";
+import { Suspense } from 'react'
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -25,12 +26,14 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <TopLoader/>
-        <PopupProvider>
-        <Header/>
-        {children}
-        <Footer/>
-        </PopupProvider>
+        <Suspense>
+          <TopLoader />
+          <PopupProvider>
+            <Header />
+            {children}
+            <Footer />
+          </PopupProvider>
+        </Suspense>
       </body>
     </html>
   );

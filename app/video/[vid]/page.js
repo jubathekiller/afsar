@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { useParams } from 'next/navigation'
 import Link from 'next/link'
 
-export default function VideoDetailPage() {
+export default function page() {
     const { vid } = useParams();
     const [allVideos, setAllVideos] = useState([]);
     const [currentVideo, setCurrentVideo] = useState(null);
